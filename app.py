@@ -26,7 +26,7 @@ coarseagg = st.sidebar.slider("Coarse Aggregate (kg/m³)", 800.0, 1200.0, 1050.0
 fineagg = st.sidebar.slider("Fine Aggregate (kg/m³)", 500.0, 1000.0, 800.0)
 age = st.sidebar.slider("Curing Age (Days)", 1, 365, 28)
 
-# 4. Format the Data for the AI
+# 4. Format the Data and Engineer the Physics Features for the AI
 input_data = pd.DataFrame({
     'cement': [cement],
     'slag': [slag],
@@ -37,6 +37,12 @@ input_data = pd.DataFrame({
     'fineagg': [fineagg],
     'age': [age]
 })
+
+# Calculate the new features in the background so the model doesn't crash!
+input_data['w_c_ratio'] = input_data['water'] / input_data['cement']
+input_data['total_binder'] = input_data['cement'] + input_data['slag'] + input_data['ash']
+input_data['w_b_ratio'] = input_data['water'] / input_data['total_binder']
+input_data['agg_ratio'] = input_data['fineagg'] / input_data['coarseagg']
 
 # 5. Make the Prediction
 st.subheader("Simulation Results")
