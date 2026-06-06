@@ -7,13 +7,18 @@ st.set_page_config(page_title="Concrete Predictor", page_icon="🏗️")
 st.title("🏗️ Structural Concrete ML Predictor")
 st.write("Powered by XGBoost Architecture")
 
-# 2. Load the Model (Cached so it doesn't reload on every click)
+# 2. Load the Model Dictionary
 @st.cache_resource
-def load_model():
-    # Make sure this matches your saved file name exactly!
-    return joblib.load('concrete_rf_model.pkl')
+def load_models():
+    return joblib.load('multi_model_sandbox.pkl')
 
-model = load_model()
+models = load_models()
+
+# --- NEW: Add a Dropdown to the Sidebar ---
+st.sidebar.header("AI Engine Selection")
+selected_engine = st.sidebar.selectbox("Choose the ML Algorithm", list(models.keys()))
+
+# ... (Keep your slider code and physics math exactly the same) ...
 
 # 3. Create the Interactive Sidebar Sliders
 st.sidebar.header("Mix Design Parameters")
@@ -44,12 +49,12 @@ input_data['total_binder'] = input_data['cement'] + input_data['slag'] + input_d
 input_data['w_b_ratio'] = input_data['water'] / input_data['total_binder']
 input_data['agg_ratio'] = input_data['fineagg'] / input_data['coarseagg']
 
-# 5. Make the Prediction
+# 5. Make the Prediction using the SELECTED engine
 st.subheader("Simulation Results")
-prediction = model.predict(input_data)[0]
+prediction = models[selected_engine].predict(input_data)[0]
 
-# Display the result prominently
-st.metric(label="Predicted Compressive Strength", value=f"{prediction:.2f} MPa")
+# Display the result
+st.metric(label=f"Predicted Strength ({selected_engine})", value=f"{prediction:.2f} MPa")
 
 # Add a quick physics check
 wc_ratio = water / cement
