@@ -1,5 +1,6 @@
-streamlit
+ststreamlit
 pandas
-xgboost
 scikit-learn
+xgboost
+lightgbm
 joblib
