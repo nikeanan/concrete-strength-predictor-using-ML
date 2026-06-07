@@ -1,7 +1,7 @@
 # 🏗️ Domain Shift Adaptation in Structural Concrete Strength Prediction
 
 **Live Dashboard:** [Click here to use the interactive AI model](https://concrete-strength-predictor-using-ml-duvwxdpdfzu6u38wehc8gz.streamlit.app/)
-**Live Dashboard:** [Click here to test the AI model](http://172.30.52.125:8501/)
+**Live Dashboard:** [Click here to test the AI model](https://concrete-strength-predictor-using-ml-hqnprbx4wnte4karwqcn2f.streamlit.app/)
 
 ### About This Project
 This repository contains a localized, end-to-end Machine Learning pipeline built for structural engineering research. It utilizes an XGBoost Regressor to predict the 28-day compressive strength of concrete based on mix design parameters.
