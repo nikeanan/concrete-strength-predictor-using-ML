@@ -2,7 +2,7 @@
 # 🧠 Domain Shift Adaptation in Structural Concrete Strength Prediction
 
 
-****Interactive Research Dashboard:** [Click here to test the inference model](#) *(Replace with URL)* Dashboard:** [Click here to use the interactive AI model](https://concrete-strength-predictor-using-ml-khanftdntwnylgpaeuxaup.streamlit.app/)
+**Interactive Research Dashboard:**  [Click here to use the interactive AI model](https://concrete-strength-predictor-using-ml-khanftdntwnylgpaeuxaup.streamlit.app/)
 **Live Dashboard:** [Click here to test the AI model](https://concrete-strength-predictor-using-ml-hqnprbx4wnte4karwqcn2f.streamlit.app/)
 
 ![Python Version](https://img.shields.io/badge/python-3.14-blue)
