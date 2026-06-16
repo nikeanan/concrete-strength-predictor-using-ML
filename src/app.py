@@ -10,7 +10,7 @@ st.write("Powered by XGBoost Architecture")
 # 2. Load the Model Dictionary
 @st.cache_resource
 def load_models():
-    return joblib.load('multi_model_sandbox.pkl')
+    return joblib.load('models/multi_model_sandbox.pkl')
 
 models = load_models()
 

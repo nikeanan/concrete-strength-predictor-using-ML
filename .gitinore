@@ -1,0 +1,13 @@
+# Python environment
+.venv/
+__pycache__/
+
+# Large Models & Binary files
+*.pkl
+*.model
+
+# OS & IDE junk
+.DS_Store
+.vscode/
+.idea/
+.ipynb_checkpoints/
